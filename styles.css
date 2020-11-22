@@ -71,6 +71,17 @@ img{
     /* height: 100px; */
 }
 
+
+.star-no-color{
+    /* background-color: rgba(180, 25, 250, 0.9); */
+    position: absolute;
+    width: 100px;
+    /* border: 3px dashed purple; */
+    /* height: 100px; */
+}
+
+
+
 #star1 {
     top: 260px;
     left: 25px;
@@ -109,6 +120,20 @@ img{
 #star6 {
     top: 400px;
     left: 310px;
+    width: 120px;
+    height: 60px;
+}
+
+#star7 {
+    top: 500px;
+    left: 70px;
+    width: 120px;
+    height: 60px;
+}
+
+#star8 {
+    top: 550px;
+    left: 460px;
     width: 120px;
     height: 60px;
 }
