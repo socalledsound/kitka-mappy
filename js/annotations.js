@@ -1,52 +1,5 @@
-const outlineOffsets = [
-    {
-        id: 0,
-        ready: true,
-        pulsing: false,
-       
-        x: 220, 
-        y: 580,
-        w: 150,
-        h: 100,
-    },
-    {
-        id: 1,
-        ready: true,
-        pulsing: false,
-        
-        x: 145, 
-        y: 270,
-        w: 50,
-        h: 50,
-    },
-    {
-        id: 2,
-        ready: true,
-        pulsing: true,
-        x: 522, 
-        y: 290,
-        w: 60,
-        h: 80,
-    }
-];
 
-const starOffsets = [
-    {
-        id: 0,
-        x: 340,
-        y: 620,
-    },
-    {
-        id: 1,
-        x: 170,
-        y: 260,
-    },
-    {
-        id: 2,
-        x: 500,
-        y: 270,
-    }
-];
+const baseURL = 'http://www.kitka.org/wintersongsdaily/dec'
 
 stars = [starOffsets[0], starOffsets[1]];
 
@@ -59,7 +12,7 @@ stars = [starOffsets[0], starOffsets[1]];
 
 const container = document.querySelector('#container');
 
-outlineOffsets.forEach(item => {
+boxes.forEach(item => {
     console.log('hi');
     createBorder(item.id, item.x, item.y, item.w, item.h, item.ready, item.pulsing);
 })
@@ -70,7 +23,11 @@ stars.forEach((star, i) =>{
 
 
 function createBorder(id, x, y, w, h, ready, pulsing){
+    const anchor = document.createElement('a');
+    anchor.className= 'divLink';
+    anchor.href = `${baseURL}${id}`;
     const div = document.createElement('div');
+    div.appendChild(anchor);
     div.style.left = `${x}px`;
     div.style.top = `${y}px`;
     div.style.width = `${w}px`;
@@ -83,8 +40,8 @@ function createBorder(id, x, y, w, h, ready, pulsing){
         div.className += ' pulsing';
         div.addEventListener('click', (e)=>{
             console.log(id);
-            console.log(starOffsets[id]);
-            stars.push(starOffsets[id]);
+            console.log(starOffsets[id-1]);
+            stars.push(starOffsets[id-1]);
             stars.forEach((star) =>{
                 createStar(star.x, star.y);
             e.target.className = 'box outline';    
