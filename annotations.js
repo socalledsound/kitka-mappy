@@ -43,8 +43,8 @@ const starOffsets = [
     },
     {
         id: 2,
-        x: 522,
-        y: 290,
+        x: 500,
+        y: 270,
     }
 ];
 
