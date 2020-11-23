@@ -8,92 +8,17 @@
 </head>
 <body>
 
-    <!-- <div class="image-container">
-        <img src="village-full.jpg" alt="">
-    </div> -->
-
-    <!-- <div class="text-container">
-        <p class="advent-text">this is some text that needs to be written and designed but the main thing is, there's a button here, maybe you should click it.</p>
-        <button onclick="scrollWindow()" class="start-button">let's go!</button>
-    </div> -->
-
-
     <div class="village-image">
-        <img src="img/numbered-map.png" alt="">
+        <img src="img/numbered-map-use.jpg" alt="">
     </div>
 
+    <div id="container">
 
-    <!-- <div class="border">
-        <p>1</p>
-    </div> -->
-
-    <div class="star" id="star1">
-        <!-- <img src="img/star.png" alt="" class="src"> -->
     </div>
-
-    <div class="star" id="star2">
-        <!-- <img src="img/star.png" alt="" class="src"> -->
-    </div>
-
-    <div class="star" id="star3">
-        <!-- <img src="img/star.png" alt="" class="src"> -->
-    </div>
-
-    <div class="star" id="star4">
-        <img src="img/star.png" alt="" class="src">
-    </div>
-
    
-    <div class="star-solid" id="star5">
-        <img src="img/star.png" alt="" class="src">
-    </div>
-    
 
-    <div class="star-solid-opaque" id="star6">
-        <!-- <img src="img/star.png" alt="" class="src"> -->
-    </div>
+    <script src="annotations.js"></script>
 
 
-    <div class="star-no-color" id="star7">
-        <img src="img/star.png" alt="" class="src">
-    </div>
-
-    <div class="star-no-color" id="star8">
-        <img src="img/star.png" alt="" class="src">
-    </div>
-
-
-    <script>
-
-
-
-
-
-        
-
-
-        function scrollWindow(){
-            console.log('scrolling');
-            const scale = 1.5;
-            const bigWidth = 3456 * scale;
-            const bigHeight = 1944 * scale;
-
-            const imageDiv = document.querySelector('.image-container');
-            imageDiv.style.width = `${bigWidth}px`;
-            imageDiv.style.height = `${bigHeight}px`;
-
-            console.log(imageDiv);
-
-            window.scrollTo({
-                // top: Math.random() * bigHeight,
-                // left: Math.random() * bigWidth,
-                top: 4900,
-                left: 150,
-                behavior: 'smooth'
-            });
-        }
-
-
-    </script>
 </body>
 </html>
