@@ -4,10 +4,11 @@ const baseURL = 'http://www.kitka.org/wintersongsdaily/dec'
 stars = [starOffsets[0], starOffsets[1]];
 
 
-// document.body.addEventListener('mousemove', (e)=> {
-//     console.log('x:', e.clientX);
-//     console.log('y:', e.clientY);
-// })
+document.body.addEventListener('mousemove', (e)=> {
+    const rect = e.target.getBoundingClientRect();
+    console.log('x:', e.clientX - rect.x);
+    console.log('y:', e.clientY - rect.y);
+})
 
 
 const container = document.querySelector('#container');
