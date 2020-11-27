@@ -1,13 +1,19 @@
 
 const baseURL = 'http://www.kitka.org/wintersongsdaily/dec'
 
-stars = [starOffsets[0], starOffsets[1]];
+const storage = window.localStorage;
+
+const stars = JSON.parse(storage.getItem('starsFromStorage') || "[]");
+console.log(stars);
+
+//stars = [starOffsets[0], starOffsets[1]];
+
 
 
 document.body.addEventListener('mousemove', (e)=> {
     const rect = e.target.getBoundingClientRect();
-    console.log('x:', e.clientX - rect.x);
-    console.log('y:', e.clientY - rect.y);
+    // console.log('x:', e.clientX - rect.x);
+    // console.log('y:', e.clientY - rect.y);
 })
 
 
@@ -15,7 +21,7 @@ const container = document.querySelector('#container');
 
 boxes.forEach(item => {
     console.log('hi');
-    createBorder(item.id, item.x, item.y, item.w, item.h, item.ready, item.pulsing);
+    createBorder(item.id, item.x, item.y, item.w, item.h, item.past, item.current);
 })
 
 stars.forEach((star, i) =>{
@@ -23,7 +29,7 @@ stars.forEach((star, i) =>{
 })
 
 
-function createBorder(id, x, y, w, h, ready, pulsing){
+function createBorder(id, x, y, w, h, past, current){
     const anchor = document.createElement('a');
     anchor.className= 'divLink';
     anchor.href = `${baseURL}${id}`;
@@ -34,18 +40,19 @@ function createBorder(id, x, y, w, h, ready, pulsing){
     div.style.width = `${w}px`;
     div.style.height = `${h}px`;
     div.className = 'box';
-    if(ready){
+    if(past){
         div.className += ' outline';
     }
-    if(pulsing){
+    if(current){
         div.className += ' pulsing';
         div.addEventListener('click', (e)=>{
-            console.log(id);
-            console.log(starOffsets[id-1]);
+            // console.log(id);
+            // console.log(starOffsets[id-1]);
+            visited
             stars.push(starOffsets[id-1]);
             stars.forEach((star) =>{
                 createStar(star.x, star.y);
-            e.target.className = 'box outline';    
+                e.target.className = 'box outline';    
             })
         })
     }
