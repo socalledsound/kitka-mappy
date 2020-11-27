@@ -1,12 +1,12 @@
 
 const baseURL = 'http://www.kitka.org/wintersongsdaily/dec'
 
-const storage = window.localStorage;
+// const storage = window.localStorage;
 
-const stars = JSON.parse(storage.getItem('starsFromStorage') || "[]");
-console.log(stars);
+// const stars = JSON.parse(storage.getItem('starsFromStorage') || "[]");
+// console.log(stars);
 
-//stars = [starOffsets[0], starOffsets[1]];
+stars = [starOffsets[0], starOffsets[1]];
 
 
 
