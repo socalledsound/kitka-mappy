@@ -30,6 +30,7 @@ const nightImage = 'img/winter-night-use.jpg';
 const time = new Date();
 const hours = time.getHours();
 const day = time.getDate();
+// const day = 1;
 
 let currentImage = getImage(hours);
 mainImage.src = currentImage;

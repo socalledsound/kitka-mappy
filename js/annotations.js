@@ -48,8 +48,12 @@ function createBorder(id, x, y, w, h, past, current){
         div.addEventListener('click', (e)=>{
             // console.log(id);
             // console.log(starOffsets[id-1]);
-            visited
-            stars.push(starOffsets[id-1]);
+            const {id, x, y} = starOffsets[id-1]
+            stars.push({id, x, y});
+           // users.push({id: 1, foo: "bar"});
+           // 
+            // visited
+            // stars.push(starOffsets[id-1]);
             stars.forEach((star) =>{
                 createStar(star.x, star.y);
                 e.target.className = 'box outline';    
